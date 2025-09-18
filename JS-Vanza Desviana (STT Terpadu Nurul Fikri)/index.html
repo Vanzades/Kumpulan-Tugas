@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menghitung Luas Bangun Datar - Vanza Desviana</title>
+</head>
+
+<body style="margin:0; font-family:Arial, sans-serif; background:#fff; color:#333;">
+
+  <!-- Judul -->
+  <div style="text-align: center; padding: 20px;">
+    <h1 style="font-size: 28px; font-weight: bold; color:#004aad;">
+      MENGHITUNG LUAS BANGUN DATAR <br>
+      <h2><span>(Persegi Panjang, Bujur Sangkar, Segitiga)</span></h2>
+    </h1>
+  </div>
+
+  <!-- Container 3 kotak sejajar -->
+  <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; padding:20px;">
+
+    <!-- Persegi Panjang -->
+    <section id="persegi-panjang" 
+      style="flex:1; min-width:280px; max-width:320px; background:#fff; border:2px solid #004aad; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:20px;">
+      <h2 style="text-align:center; color:#004aad;">Persegi Panjang</h2>
+      <small style="display:block; text-align:center; margin-bottom:15px;">Rumus: p × l</small>
+      <form onsubmit="hitungPersegiPanjang(event)" style="display:flex; flex-direction:column; gap:10px;">
+        <label style="font-weight:bold;">Panjang:</label>
+        <input type="number" id="rect-panjang" style="padding:8px; border:1px solid #004aad; border-radius:6px; text-align:center;" required>
+
+        <label style="font-weight:bold;">Lebar:</label>
+        <input type="number" id="rect-lebar" style="padding:8px; border:1px solid #004aad; border-radius:6px; text-align:center;" required>
+
+        <label style="font-weight:bold;">Hasil:</label>
+        <input type="text" id="hasil-rect" readonly 
+               style="padding:8px; border:1px solid #004aad; border-radius:6px; text-align:center; background:#f0f8ff; font-weight:bold;">
+
+        <div style="display:flex; gap:10px; margin-top:10px;">
+          <button type="submit" 
+                  style="flex:1; padding:10px; background:#004aad; color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">
+                  Hitung</button>
+          <button type="reset" 
+                  style="flex:1; padding:10px; background:#0066cc; color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">
+                  Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Bujur Sangkar -->
+    <section id="persegi" 
+      style="flex:1; min-width:280px; max-width:320px; background:#fff; border:2px solid #004aad; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:20px;">
+      <h2 style="text-align:center; color:#004aad;">Bujur Sangkar</h2>
+      <small style="display:block; text-align:center; margin-bottom:15px;">Rumus: s1 × s2</small>
+      <form onsubmit="hitungPersegi(event)" style="display:flex; flex-direction:column; gap:10px;">
+        <label style="font-weight:bold;">Sisi 1:</label>
+        <input type="number" id="rect-sisi1" style="padding:8px; border:1px solid #004aad; border-radius:6px; text-align:center;" required>
+
+        <label style="font-weight:bold;">Sisi 2:</label>
+        <input type="number" id="rect-sisi2" style="padding:8px; border:1px solid #004aad; border-radius:6px; text-align:center;" required>
+
+        <label style="font-weight:bold;">Hasil:</label>
+        <input type="text" id="hasil-sisi" readonly 
+               style="padding:8px; border:1px solid #004aad; border-radius:6px; text-align:center; background:#f0f8ff; font-weight:bold;">
+
+        <div style="display:flex; gap:10px; margin-top:10px;">
+          <button type="submit" 
+                  style="flex:1; padding:10px; background:#004aad; color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">
+                  Hitung</button>
+          <button type="reset" 
+                  style="flex:1; padding:10px; background:#0066cc; color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">
+                  Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Segitiga -->
+    <section id="segitiga" 
+      style="flex:1; min-width:280px; max-width:320px; background:#fff; border:2px solid #004aad; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:20px;">
+      <h2 style="text-align:center; color:#004aad;">Segitiga</h2>
+      <small style="display:block; text-align:center; margin-bottom:15px;">Rumus: ½ × a × t</small>
+      <form onsubmit="hitungSegitiga(event)" style="display:flex; flex-direction:column; gap:10px;">
+        <label style="font-weight:bold;">Alas:</label>
+        <input type="number" id="rect-alas" style="padding:8px; border:1px solid #004aad; border-radius:6px; text-align:center;" required>
+
+        <label style="font-weight:bold;">Tinggi:</label>
+        <input type="number" id="rect-tinggi" style="padding:8px; border:1px solid #004aad; border-radius:6px; text-align:center;" required>
+
+        <label style="font-weight:bold;">Hasil:</label>
+        <input type="text" id="hasil-segitiga" readonly 
+               style="padding:8px; border:1px solid #004aad; border-radius:6px; text-align:center; background:#f0f8ff; font-weight:bold;">
+
+        <div style="display:flex; gap:10px; margin-top:10px;">
+          <button type="submit" 
+                  style="flex:1; padding:10px; background:#004aad; color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">
+                  Hitung</button>
+          <button type="reset" 
+                  style="flex:1; padding:10px; background:#0066cc; color:white; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">
+                  Reset</button>
+        </div>
+      </form>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <div style="text-align:center; padding:15px; background:#004aad; color:white; font-weight:bold; margin-top:20px;">
+    &copy; 2025 Vanza Desviana. All Rights Reserved.
+  </div>
+
+  <script>
+    function hitungPersegiPanjang(e) {
+      e.preventDefault();
+      let p = parseFloat(document.getElementById("rect-panjang").value);
+      let l = parseFloat(document.getElementById("rect-lebar").value);
+      document.getElementById("hasil-rect").value = p * l;
+    }
+
+    function hitungPersegi(e) {
+      e.preventDefault();
+      let s1 = parseFloat(document.getElementById("rect-sisi1").value);
+      let s2 = parseFloat(document.getElementById("rect-sisi2").value);
+      document.getElementById("hasil-sisi").value = s1 * s2;
+    }
+
+    function hitungSegitiga(e) {
+      e.preventDefault();
+      let a = parseFloat(document.getElementById("rect-alas").value);
+      let t = parseFloat(document.getElementById("rect-tinggi").value);
+      document.getElementById("hasil-segitiga").value = 0.5 * a * t;
+    }
+  </script>
+</body>
+</html>
