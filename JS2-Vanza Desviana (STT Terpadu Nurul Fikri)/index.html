@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas 2 - Data Pegawai</title>
+</head>
+
+<body style="font-family:Arial, sans-serif; background:#fff; padding:20px;">
+
+  <h1 style="text-align:center; color:#004aad;">Data Pegawai</h1>
+
+  <table border="1" cellspacing="0" cellpadding="10" style="margin:20px auto; border-collapse:collapse; width:80%; text-align:center;">
+    <thead style="background:#004aad; color:white;">
+      <tr>
+        <th>Nama Pegawai</th>
+        <th>Umur</th>
+        <th>Jabatan</th>
+        <th>Status</th>
+        <th>Gaji Pokok</th>
+        <th>Tunjangan Jabatan</th>
+        <th>BPJS</th>
+        <th>Tunjangan Keluarga</th>
+      </tr>
+    </thead>
+    <tbody id="data-pegawai" style="background:#f9f9f9;">
+      <!-- Data pegawai akan dicetak lewat JS -->
+    </tbody>
+    <tfoot style="background:#e6f0ff; font-weight:bold;">
+      <tr>
+        <td colspan="7">Total Gaji</td>
+        <td id="total-gaji"></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <script>
+    // Data pegawai
+    let nama = "dodi prayodi";
+    let umur = 25;
+    let jabatan = "manajer";
+    let status = "menikah";
+
+    // Tentukan gaji pokok pakai if
+    let gajiPokok = 0;
+    if (jabatan.toLowerCase() === "manajer") {
+      gajiPokok = 15000000;
+    } else if (jabatan.toLowerCase() === "asisten manajer") {
+      gajiPokok = 10000000;
+    } else if (jabatan.toLowerCase() === "staff") {
+      gajiPokok = 5000000;
+    }
+
+    // Tunjangan jabatan 15% dari gaji pokok
+    let tunjanganJabatan = 0.15 * gajiPokok;
+
+    // BPJS 10% dari gaji pokok
+    let bpjs = 0.10 * gajiPokok;
+
+    // Tunjangan keluarga (ternary: kalau menikah dapat 20% dari gapok)
+    let tunjanganKeluarga = (status.toLowerCase() === "menikah") ? 0.20 * gajiPokok : 0;
+
+    // Total gaji
+    let totalGaji = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+    // Cetak data ke tbody
+    document.getElementById("data-pegawai").innerHTML = `
+      <tr>
+        <td>${nama}</td>
+        <td>${umur}</td>
+        <td>${jabatan}</td>
+        <td>${status}</td>
+        <td>Rp ${gajiPokok.toLocaleString()}</td>
+        <td>Rp ${tunjanganJabatan.toLocaleString()}</td>
+        <td>Rp ${bpjs.toLocaleString()}</td>
+        <td>Rp ${tunjanganKeluarga.toLocaleString()}</td>
+      </tr>
+    `;
+
+    // Cetak total gaji ke tfoot
+    document.getElementById("total-gaji").innerText = "Rp " + totalGaji.toLocaleString();
+  </script>
+
+</body>
+</html>
