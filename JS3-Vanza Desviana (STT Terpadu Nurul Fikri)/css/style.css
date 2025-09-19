@@ -1,0 +1,4 @@
+/* Gradasi biru terang */
+.bg-gradient-primary {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+}
