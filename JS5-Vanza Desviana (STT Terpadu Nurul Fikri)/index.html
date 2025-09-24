@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manajemen Produk Toko</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>🛒 Sistem Manajemen Produk Toko</h1>
+  </header>
+
+  <main>
+    <!-- Form Tambah Produk -->
+    <section class="form-section">
+      <h2>Tambah Produk Baru</h2>
+      <form id="form-produk">
+        <input type="text" id="input-nama" placeholder="Nama Produk" required>
+        <input type="number" id="input-harga" placeholder="Harga Produk" required>
+        <input type="number" id="input-stok" placeholder="Stok Produk" required>
+        <button type="submit">Tambah Produk</button>
+      </form>
+      <p id="notif" class="notif"></p>
+    </section>
+
+    <!-- Tabel Produk -->
+    <section class="table-section">
+      <h2>Daftar Produk</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>Harga</th>
+            <th>Stok</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="tabel-produk"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Sistem Manajemen Produk. All rights reserved.</p>
+  </footer>
+
+  <script src="js/produk.js"></script>
+</body>
+</html>
